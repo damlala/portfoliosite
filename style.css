@@ -32,6 +32,11 @@ nav button:hover {
   color: #2563eb;
 }
 
+nav button.active-btn {
+  color: #2563eb;
+  font-weight: 600;
+}
+
 /* PAGES */
 .page {
   display: none;
