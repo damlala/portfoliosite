@@ -10,15 +10,14 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <h2 class="logo">Damla Öztürk</h2>
 
   <nav>
-    <button onclick="showPage('about')">About</button>
-    <button onclick="showPage('resume')">Resume</button>
-    <button onclick="showPage('portfolio')">Projects</button>
-    <button onclick="showPage('contact')">Contact</button>
+    <button onclick="showPage('about', this)" class="active-btn">About</button>
+    <button onclick="showPage('resume', this)">Resume</button>
+    <button onclick="showPage('portfolio', this)">Projects</button>
+    <button onclick="showPage('contact', this)">Contact</button>
   </nav>
 </header>
 
@@ -31,7 +30,7 @@
       data science and artificial intelligence.
     </p>
     <p>
-      I enjoy building real-world projects, solving problems, and continuously improving my skills.
+      I enjoy building real-world projects and solving problems.
     </p>
   </div>
 </section>
@@ -39,6 +38,7 @@
 <!-- RESUME -->
 <section id="resume" class="page">
   <div class="container">
+
     <h1>Resume</h1>
 
     <div class="card">
@@ -54,12 +54,14 @@
         Worked as a fullstack developer. Built an order and customer tracking platform using React and C# Web API.
       </p>
     </div>
+
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="portfolio" class="page">
   <div class="container">
+
     <h1>Projects</h1>
 
     <div class="grid">
@@ -67,65 +69,57 @@
       <div class="card highlight">
         <h3>🎉 Birthday Surprise Website</h3>
         <p>
-          A personalized React-based web application created as a birthday gift.
-          Includes photos, videos, and interactive animations.
+          A personalized React-based web application with photos, videos and animations created as a digital gift.
         </p>
         <span>React • Animations</span>
       </div>
 
       <div class="card">
         <h3>Barem Tracking Platform</h3>
-        <p>
-          Full-stack system to manage orders and customers during internship.
-        </p>
+        <p>Full-stack order and customer tracking system.</p>
         <span>React • C# • SQL</span>
       </div>
 
       <div class="card">
         <h3>Movie Archive System</h3>
-        <p>
-          A system to organize, rate, and track watched movies.
-        </p>
+        <p>Track, rate and organize watched movies.</p>
         <span>JavaScript • HTML/CSS</span>
       </div>
 
       <div class="card">
         <h3>BlogWeb</h3>
-        <p>
-          Dynamic blog platform with CRUD functionality.
-        </p>
+        <p>Dynamic blog platform with CRUD features.</p>
         <span>Web Development</span>
       </div>
 
       <div class="card">
         <h3>Sentiment Analysis</h3>
-        <p>
-          Machine learning model that analyzes text sentiment.
-        </p>
+        <p>Machine learning model for text sentiment analysis.</p>
         <span>Python • ML</span>
       </div>
 
       <div class="card">
         <h3>MDQI Image Quality</h3>
-        <p>
-          Research project focused on image quality assessment.
-        </p>
+        <p>Research-based image quality assessment project.</p>
         <span>Research</span>
       </div>
 
     </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="page">
   <div class="container">
+
     <h1>Contact</h1>
 
     <div class="card">
       <p><strong>Email:</strong> damla.ztkk@gmail.com</p>
       <p><strong>Phone:</strong> 0533 877 4733</p>
     </div>
+
   </div>
 </section>
 
