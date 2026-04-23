@@ -1,18 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Damla Öztürk Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damla Öztürk Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* GENEL AYARLAR */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc; /* Görseldeki gibi açık gri arka plan */
+      color: #334155;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #0f172a;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
 
-<link rel="stylesheet" href="style.css">
+    /* NAVBAR - MENÜ */
+    .navbar {
+      background: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .logo {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1.2rem;
+    }
+    .navbar nav button {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-left: 20px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    .navbar nav button:hover {
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+    .navbar nav button.active-btn {
+      color: #2563eb;
+      background-color: #eff6ff;
+      font-weight: 600;
+    }
+
+    /* SAYFA GEÇİŞLERİ */
+    .page {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .page.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* KARTLAR VE PROJE GRID'İ */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f1f5f9;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1; /* Metin kısaysa etiketleri her zaman alta iter */
+    }
+
+    /* TEKNOLOJİ ETİKETLERİ (BADGES) - Asıl Düzeltilen Kısım */
+    .card span {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2563eb; /* Mavi yazı */
+      background-color: #eff6ff; /* Açık mavi arka plan */
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #bfdbfe;
+      width: max-content; /* Sadece yazının boyutu kadar yer kaplar */
+    }
+
+    /* ÖNE ÇIKAN KARTLAR (Birthday) */
+    .card.highlight {
+      border: 2px solid #ec4899;
+      background: linear-gradient(to right bottom, #ffffff, #fdf2f8);
+    }
+    .card.highlight span {
+      background-color: #fce7f3;
+      color: #db2777;
+      border-color: #fbcfe8;
+    }
+
+    /* MOBİL UYUM */
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .navbar { flex-direction: column; gap: 15px; }
+      .navbar nav button { margin: 0 5px; padding: 5px 10px; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="navbar">
   <h2 class="logo">Damla Öztürk</h2>
-
   <nav>
     <button onclick="showPage('about', this)" class="active-btn">About</button>
     <button onclick="showPage('resume', this)">Resume</button>
@@ -21,131 +161,134 @@
   </nav>
 </header>
 
-<!-- ABOUT -->
 <section id="about" class="page active">
   <div class="container">
     <h1>About Me</h1>
-    <p>
-      4th-year Computer Engineering student passionate about software development,
-      data science and artificial intelligence. I enjoy building real-world projects and solving problems. 
-    </p>
-    <p>
-     I love reading and learning new languages. I went Did Deutsch Institut Berlin for a month. 
-    </p>
-  </div>
-</section>
-
-<!-- RESUME -->
-<section id="resume" class="page">
-  <div class="container">
-
-    <h1>Resume</h1>
-
     <div class="card">
-      <h3>🎓 Education</h3>
-      <p><strong>Eastern Mediterranean University</strong></p>
-      <span>2022 – 2026</span>
-    </div>
-
-    <div class="card">
-      <h3>💼 Experience</h3>
-      <p><strong>Barem Ambalaj Internship</strong></p>
       <p>
-        Worked as a fullstack developer. Built an Order and Customer Tracking platform using React and C# Web API.
+        4th-year Computer Engineering student passionate about software development,
+        data science and artificial intelligence. I enjoy building real-world projects and solving problems. 
+      </p>
+      <p>
+        I love reading and learning new languages. I attended Did Deutsch-Institut Berlin for a month. 
       </p>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS -->
+<section id="resume" class="page">
+  <div class="container">
+    <h1>Resume</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>🎓 Education</h3>
+        <p><strong>Eastern Mediterranean University</strong></p>
+        <span>2022 – 2026</span>
+      </div>
+
+      <div class="card">
+        <h3>💼 Experience</h3>
+        <p><strong>Barem Ambalaj Internship</strong></p>
+        <p>
+          Worked as a fullstack developer. Built an Order and Customer Tracking platform using React and C# Web API.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="portfolio" class="page">
   <div class="container">
-
     <h1>Projects</h1>
-
+    
     <div class="grid">
-
       <div class="card highlight">
         <h3>🎉 Birthday Surprise Website</h3>
-        <p>
-          A personalized React-based web application with photos, videos, animations and pop quiz created as a digital gift.
-        </p>
+        <p>A personalized React-based web application with photos, videos, animations and a pop quiz created as a digital gift.</p>
         <span>React • Bootstrap</span>
       </div>
 
       <div class="card">
-        <h3>Barem Tracking Platform</h3>
-        <p>Full-stack order and customer tracking system.</p>
-        <span>React • C# • PostgreSQL • API</span>
-      </div>
-
-      <div class="card">
-        <h3>Movie Archive System</h3>
-        <p>Track, rate and organize watched movies.</p>
-        <span>C#</span>
-      </div>
-
-      <div class="card">
-        <h3>BlogWeb</h3>
-        <p>Dynamic blog platform.</p>
-        <span>HTML • CSS • JS</span>
-      </div>
-
-      <div class="card">
-        <h3>Sentiment Analysis</h3>
-        <p>Machine learning model for sentiment analysis.</p>
-        <span>Python • ML</span>
-      </div>
-
-      <div class="card">
-        <h3>MDQI Image Quality</h3>
-        <p>Research-based image quality assessment project.</p>
-        <span>Research • Python</span>
-      </div>
-
-      <div class="card">
         <h3>Breakup Healing App (Ongoing)</h3>
-        <p>
-          Developing a mobile application focused on emotional well-being.
-          Includes AI chatbot integration using NLP.
-        </p>
+        <p>Developing a mobile application focused on emotional well-being. Includes AI chatbot integration using NLP.</p>
         <span>React • Firebase</span>
       </div>
 
       <div class="card">
         <h3>Credit Card Validator</h3>
-        <p>A Java-based credit card validator using the Luhn algorithm.</p>
-        <span>Java</span>
+        <p>A Java-based credit card validator using the Luhn algorithm to securely verify formats.</p>
+        <span>Java • Regex</span>
+      </div>
+
+      <div class="card">
+        <h3>Barem Tracking Platform</h3>
+        <p>Full-stack B2B order and customer tracking system for an industrial packing company.</p>
+        <span>React • C# • PostgreSQL</span>
       </div>
 
       <div class="card">
         <h3>Book Exchange Platform</h3>
-        <p>
-          A website for university students to buy, sell, and exchange books.
-        </p>
-        <span>Web</span>
+        <p>A website for university students to buy, sell, and exchange academic books.</p>
+        <span>Web Development</span>
       </div>
 
+      <div class="card">
+        <h3>MDQI Image Quality</h3>
+        <p>Research-based image quality assessment project focusing on objective metrics.</p>
+        <span>Research • Python</span>
+      </div>
+
+      <div class="card">
+        <h3>Sentiment Analysis</h3>
+        <p>Machine learning model utilizing NLP to classify user sentiments based on text data.</p>
+        <span>Python • ML</span>
+      </div>
+
+      <div class="card">
+        <h3>Movie Archive System</h3>
+        <p>Personalized desktop app to track, rate and organize watched movies.</p>
+        <span>C# .NET</span>
+      </div>
+
+      <div class="card">
+        <h3>BlogWeb</h3>
+        <p>Dynamic blog platform showcasing modern UI practices and responsive design.</p>
+        <span>HTML • CSS • JS</span>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="page">
   <div class="container">
-
     <h1>Contact</h1>
-
     <div class="card">
-      <p><strong>Email:</strong> damla.ztkk@gmail.com</p>
+      <p><strong>Email:</strong> <a href="mailto:damla.ztkk@gmail.com" style="color:#2563eb; text-decoration:none;">damla.ztkk@gmail.com</a></p>
       <p><strong>Phone:</strong> 0533 877 4733</p>
     </div>
-
   </div>
 </section>
 
-<script src="script.js"></script>
+<script>
+  // Senin script.js dosyanın basit versiyonunu buraya entegre ettim, ek dosya gerekmez!
+  function showPage(pageId, btnElement) {
+    // Tüm sayfaları gizle
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+
+    // Tıklanan sayfayı göster
+    document.getElementById(pageId).classList.add('active');
+
+    // Menüdeki butonların aktiflik rengini ayarla
+    const buttons = document.querySelectorAll('.navbar nav button');
+    buttons.forEach(btn => btn.classList.remove('active-btn'));
+    btnElement.classList.add('active-btn');
+    
+    // Tıklandığında sayfanın en üstüne çık
+    window.scrollTo(0, 0);
+  }
+</script>
+
 </body>
 </html>
