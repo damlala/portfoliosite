@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Damla Öztürk Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <h2>Damla Öztürk</h2>
+  <nav>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('resume')">Resume</button>
+    <button onclick="showPage('portfolio')">Projects</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="page active">
+  <h1>About Me</h1>
+  <p>
+    4th-year Computer Engineering student passionate about software development,
+    data science and AI. I enjoy building real-world projects and solving problems.
+  </p>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="page">
+  <h1>Resume</h1>
+
+  <h3>Education</h3>
+  <p>Eastern Mediterranean University (2022–2026)</p>
+
+  <h3>Experience</h3>
+  <p>
+    Barem Ambalaj Internship — Fullstack developer using React & C#
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="portfolio" class="page">
+  <h1>Projects</h1>
+
+  <div class="card">
+    <h3>Barem Tracking Platform</h3>
+    <p>Developed a full-stack order and customer tracking system.</p>
+    <span>React • C# • SQL</span>
+  </div>
+
+  <div class="card">
+    <h3>Birthday Surprise Website 🎉</h3>
+    <p>
+      A React-based interactive birthday project including photos,
+      videos and animations for a friend.
+    </p>
+    <span>React • Animations</span>
+  </div>
+
+  <div class="card">
+    <h3>Movie Archive System</h3>
+    <p>A system to track, rate and organize watched movies.</p>
+    <span>JavaScript • HTML/CSS</span>
+  </div>
+
+  <div class="card">
+    <h3>BlogWeb</h3>
+    <p>Dynamic blog platform with CRUD operations.</p>
+    <span>Web Development</span>
+  </div>
+
+  <div class="card">
+    <h3>Sentiment Analysis</h3>
+    <p>Machine learning model that analyzes text sentiment.</p>
+    <span>Python • ML</span>
+  </div>
+
+  <div class="card">
+    <h3>MDQI Image Quality</h3>
+    <p>Research-based image quality assessment project.</p>
+    <span>Research</span>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h1>Contact</h1>
+  <p>Email: damla.ztkk@gmail.com</p>
+  <p>Phone: 0533 877 4733</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
