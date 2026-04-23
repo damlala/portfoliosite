@@ -11,9 +11,9 @@
 <body>
 
 <!-- NAVBAR -->
-<header>
-  <h2>Damla Öztürk</h2>
-  <h1>TEST ÇALIŞIYOR</h1>
+<header class="navbar">
+  <h2 class="logo">Damla Öztürk</h2>
+
   <nav>
     <button onclick="showPage('about')">About</button>
     <button onclick="showPage('resume')">Resume</button>
@@ -24,76 +24,109 @@
 
 <!-- ABOUT -->
 <section id="about" class="page active">
-  <h1>About Me</h1>
-  <p>
-    4th-year Computer Engineering student passionate about software development,
-    data science and AI. I enjoy building real-world projects and solving problems.
-  </p>
+  <div class="container">
+    <h1>About Me</h1>
+    <p>
+      4th-year Computer Engineering student passionate about software development,
+      data science and artificial intelligence.
+    </p>
+    <p>
+      I enjoy building real-world projects, solving problems, and continuously improving my skills.
+    </p>
+  </div>
 </section>
 
 <!-- RESUME -->
 <section id="resume" class="page">
-  <h1>Resume</h1>
+  <div class="container">
+    <h1>Resume</h1>
 
-  <h3>Education</h3>
-  <p>Eastern Mediterranean University (2022–2026)</p>
+    <div class="card">
+      <h3>🎓 Education</h3>
+      <p><strong>Eastern Mediterranean University</strong></p>
+      <span>2022 – 2026</span>
+    </div>
 
-  <h3>Experience</h3>
-  <p>
-    Barem Ambalaj Internship — Fullstack developer using React & C#
-  </p>
+    <div class="card">
+      <h3>💼 Experience</h3>
+      <p><strong>Barem Ambalaj Internship</strong></p>
+      <p>
+        Worked as a fullstack developer. Built an order and customer tracking platform using React and C# Web API.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="portfolio" class="page">
-  <h1>Projects</h1>
+  <div class="container">
+    <h1>Projects</h1>
 
-  <div class="card">
-    <h3>Barem Tracking Platform</h3>
-    <p>Developed a full-stack order and customer tracking system.</p>
-    <span>React • C# • SQL</span>
+    <div class="grid">
+
+      <div class="card highlight">
+        <h3>🎉 Birthday Surprise Website</h3>
+        <p>
+          A personalized React-based web application created as a birthday gift.
+          Includes photos, videos, and interactive animations.
+        </p>
+        <span>React • Animations</span>
+      </div>
+
+      <div class="card">
+        <h3>Barem Tracking Platform</h3>
+        <p>
+          Full-stack system to manage orders and customers during internship.
+        </p>
+        <span>React • C# • SQL</span>
+      </div>
+
+      <div class="card">
+        <h3>Movie Archive System</h3>
+        <p>
+          A system to organize, rate, and track watched movies.
+        </p>
+        <span>JavaScript • HTML/CSS</span>
+      </div>
+
+      <div class="card">
+        <h3>BlogWeb</h3>
+        <p>
+          Dynamic blog platform with CRUD functionality.
+        </p>
+        <span>Web Development</span>
+      </div>
+
+      <div class="card">
+        <h3>Sentiment Analysis</h3>
+        <p>
+          Machine learning model that analyzes text sentiment.
+        </p>
+        <span>Python • ML</span>
+      </div>
+
+      <div class="card">
+        <h3>MDQI Image Quality</h3>
+        <p>
+          Research project focused on image quality assessment.
+        </p>
+        <span>Research</span>
+      </div>
+
+    </div>
   </div>
-
-  <div class="card">
-    <h3>Birthday Surprise Website 🎉</h3>
-    <p>
-      A React-based interactive birthday project including photos,
-      videos and animations for a friend.
-    </p>
-    <span>React • Animations</span>
-  </div>
-
-  <div class="card">
-    <h3>Movie Archive System</h3>
-    <p>A system to track, rate and organize watched movies.</p>
-    <span>JavaScript • HTML/CSS</span>
-  </div>
-
-  <div class="card">
-    <h3>BlogWeb</h3>
-    <p>Dynamic blog platform with CRUD operations.</p>
-    <span>Web Development</span>
-  </div>
-
-  <div class="card">
-    <h3>Sentiment Analysis</h3>
-    <p>Machine learning model that analyzes text sentiment.</p>
-    <span>Python • ML</span>
-  </div>
-
-  <div class="card">
-    <h3>MDQI Image Quality</h3>
-    <p>Research-based image quality assessment project.</p>
-    <span>Research</span>
-  </div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="page">
-  <h1>Contact</h1>
-  <p>Email: damla.ztkk@gmail.com</p>
-  <p>Phone: 0533 877 4733</p>
+  <div class="container">
+    <h1>Contact</h1>
+
+    <div class="card">
+      <p><strong>Email:</strong> damla.ztkk@gmail.com</p>
+      <p><strong>Phone:</strong> 0533 877 4733</p>
+    </div>
+  </div>
 </section>
 
 <script src="script.js"></script>
