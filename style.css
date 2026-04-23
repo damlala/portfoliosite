@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: white;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 /* NAVBAR */
@@ -10,31 +10,32 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background: #020617;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
   align-items: center;
 }
 
 .logo {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 nav button {
   margin-left: 15px;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #475569;
   font-size: 15px;
   cursor: pointer;
 }
 
 nav button:hover {
-  color: #38bdf8;
+  color: #2563eb;
 }
 
 /* PAGES */
 .page {
   display: none;
-  padding: 40px;
+  padding: 50px 20px;
 }
 
 .page.active {
@@ -49,16 +50,16 @@ nav button:hover {
 
 /* CARDS */
 .card {
-  background: #1e293b;
+  background: white;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   margin: 15px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background: #334155;
+  transform: translateY(-4px);
 }
 
 /* GRID */
@@ -69,13 +70,13 @@ nav button:hover {
 }
 
 .highlight {
-  border: 2px solid #38bdf8;
+  border: 2px solid #2563eb;
 }
 
 .card span {
   display: block;
   margin-top: 10px;
-  color: #38bdf8;
+  color: #2563eb;
   font-size: 13px;
 }
 
