@@ -1,29 +1,34 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #0f172a;
   color: white;
 }
 
 /* NAVBAR */
-header {
+.navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 40px;
   background: #020617;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
 }
 
 nav button {
-  margin-left: 10px;
+  margin-left: 15px;
   background: none;
   border: none;
   color: #94a3b8;
+  font-size: 15px;
   cursor: pointer;
-  font-size: 16px;
 }
 
 nav button:hover {
-  color: white;
+  color: #38bdf8;
 }
 
 /* PAGES */
@@ -36,12 +41,18 @@ nav button:hover {
   display: block;
 }
 
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
 /* CARDS */
 .card {
   background: #1e293b;
   padding: 20px;
-  margin: 15px 0;
   border-radius: 12px;
+  margin: 15px 0;
   transition: 0.3s;
 }
 
@@ -50,8 +61,27 @@ nav button:hover {
   background: #334155;
 }
 
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.highlight {
+  border: 2px solid #38bdf8;
+}
+
 .card span {
   display: block;
   margin-top: 10px;
   color: #38bdf8;
+  font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
