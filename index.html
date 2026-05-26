@@ -15,7 +15,7 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc; /* Görseldeki gibi açık gri arka plan */
+      background-color: #f8fafc;
       color: #334155;
       line-height: 1.6;
     }
@@ -113,20 +113,20 @@
       color: #475569;
       font-size: 0.95rem;
       margin-bottom: 20px;
-      flex-grow: 1; /* Metin kısaysa etiketleri her zaman alta iter */
+      flex-grow: 1;
     }
 
-    /* TEKNOLOJİ ETİKETLERİ (BADGES) - Asıl Düzeltilen Kısım */
+    /* TEKNOLOJİ ETİKETLERİ (BADGES) */
     .card span {
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #2563eb; /* Mavi yazı */
-      background-color: #eff6ff; /* Açık mavi arka plan */
+      color: #2563eb;
+      background-color: #eff6ff;
       padding: 6px 14px;
       border-radius: 20px;
       border: 1px solid #bfdbfe;
-      width: max-content; /* Sadece yazının boyutu kadar yer kaplar */
+      width: max-content;
     }
 
     /* ÖNE ÇIKAN KARTLAR (Birthday) */
@@ -169,9 +169,6 @@
         4th-year Computer Engineering student passionate about software development,
         data science and artificial intelligence. I enjoy building real-world projects and solving problems. 
       </p>
-      <p>
-         
-      </p>
     </div>
   </div>
 </section>
@@ -210,21 +207,21 @@
       </div>
 
       <div class="card">
-        <h3>Graduation Project: MarCode – Mobile Barcode Scanner App (Expected Completion: June 2026)</h3>
+        <h3>Graduation Project: MarCode – Mobile Barcode Scanner App</h3>
         <p>Currently developing a mobile application for real-time supermarket price comparison. As the core backend engineer in a team of four, I am responsible for architecting the NoSQL database schema (Firebase) and building secure RESTful APIs using Node.js to handle barcode querying, JWT-based user authentication, and Firebase Cloud Messaging integrations.</p>
         <span>Node.js • Firebase • REST API</span>
       </div>
 
-      <div class="card">
+      <div class="card highlight">
         <h3>🎉 Birthday Surprise Website</h3>
-        <p>A personalized React-based web application with photos, videos, animations and a pop quiz created as a digital gift for my frie</p>
+        <p>A personalized React-based web application with photos, videos, animations and a pop quiz created as a special digital gift for a close friend.</p>
         <span>React • Bootstrap</span>
       </div>
 
       <div class="card">
-        <h3>Breakup Healing App (Ongoing)</h3>
-        <p>Developing a mobile application specifically focused on relationship coaching and post-breakup healing. Includes AI chatbot integration.</p>
-        <span>Node.js • Firebase</span>
+        <h3>After - Breakup Healing App (Ongoing)</h3>
+        <p>Collaborating on the development of a cross-platform mobile application focused on relationship coaching and post-breakup recovery. Responsible for architecting the backend using Node.js, managing Firebase database instances, and integrating Gemini AI for automated conversational support.</p>
+        <span>Node.js • Firebase • Gemini AI</span>
       </div>
 
       <div class="card">
@@ -247,8 +244,8 @@
 
       <div class="card">
         <h3>Sentiment Analysis</h3>
-        <p>A text classification tool developed in C# utilizing the Hugging Face API. It handles HTTP requests and processes real-time JSON data to categorize user sentiments into positive, neutral, or negative.</p>
-        <span>Python • ML</span>
+        <p>A text classification tool developed in C# utilizing the Hugging Face API. It handles HTTP requests and processes real-time JSON data to categorize user sentiments into positive, neutral, or negative brackets.</p>
+        <span>C# .NET • NLP</span>
       </div>
 
       <div class="card">
@@ -257,7 +254,8 @@
         <span>C# .NET</span>
       </div>
 
-    </div> </div>
+    </div> 
+  </div>
 </section>
 
 <section id="contact" class="page">
@@ -271,21 +269,16 @@
 </section>
 
 <script>
-  // Senin script.js dosyanın basit versiyonunu buraya entegre ettim, ek dosya gerekmez!
   function showPage(pageId, btnElement) {
-    // Tüm sayfaları gizle
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
 
-    // Tıklanan sayfayı göster
     document.getElementById(pageId).classList.add('active');
 
-    // Menüdeki butonların aktiflik rengini ayarla
     const buttons = document.querySelectorAll('.navbar nav button');
     buttons.forEach(btn => btn.classList.remove('active-btn'));
     btnElement.classList.add('active-btn');
     
-    // Tıklandığında sayfanın en üstüne çık
     window.scrollTo(0, 0);
   }
 </script>
