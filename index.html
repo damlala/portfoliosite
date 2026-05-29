@@ -71,6 +71,56 @@
       font-weight: 600;
     }
 
+    /* büyük alan */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      border: none;
+      margin-bottom: 10px;
+      padding-bottom: 0;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 25px auto;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #f8fafc;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+    .social-btn:hover {
+      background-color: #2563eb;
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+
     /* SAYFA GEÇİŞLERİ */
     .page {
       display: none;
@@ -84,7 +134,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* KARTLAR VE PROJE GRID'İ */
+    /* KARTLAR  */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -116,7 +166,15 @@
       flex-grow: 1;
     }
 
-    /* TEKNOLOJİ ETİKETLERİ (BADGES) */
+    /* LİNK ALANI */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid #f1f5f9;
+    }
     .card span {
       display: inline-block;
       font-size: 0.8rem;
@@ -127,6 +185,18 @@
       border-radius: 20px;
       border: 1px solid #bfdbfe;
       width: max-content;
+    }
+    .code-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f172a;
+      text-decoration: none;
+      display-inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+    .code-link:hover {
+      color: #2563eb;
     }
 
     /* ÖNE ÇIKAN KARTLAR (Birthday) */
@@ -145,6 +215,7 @@
       .grid { grid-template-columns: 1fr; }
       .navbar { flex-direction: column; gap: 15px; }
       .navbar nav button { margin: 0 5px; padding: 5px 10px; }
+      .hero h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
@@ -152,7 +223,7 @@
 <body>
 
 <header class="navbar">
-  <h2 class="logo">Damla Öztürk</h2>
+  <h2 class="logo">DAMLA ÖZTÜRKk</h2>
   <nav>
     <button onclick="showPage('about', this)" class="active-btn">About</button>
     <button onclick="showPage('resume', this)">Resume</button>
@@ -163,11 +234,22 @@
 
 <section id="about" class="page active">
   <div class="container">
+    
+    <div class="hero">
+      <h1>Damla Öztürk</h1>
+      <p>Computer Engineer & Software Developer</p>
+      <div class="social-links">
+        <a href="mailto:damla.ztkk@gmail.com" class="social-btn">✉️ Email</a>
+        <a href="https://github.com/damlala" class="social-btn" target="_blank">🐙 GitHub</a>
+        <a href="www.linkedin.com/in/damla-öztürk-486625246" class="social-btn" target="_blank">💼 LinkedIn</a>
+      </div>
+    </div>
+
     <h1>About Me</h1>
     <div class="card">
       <p>
         4th-year Computer Engineering student passionate about software development,
-        data science and artificial intelligence. I enjoy building real-world projects and solving problems. 
+        data science and artificial intelligence. I enjoy building real-world projects, designing systems and implementing scalable backend infrastructures. 
       </p>
     </div>
   </div>
@@ -187,7 +269,7 @@
         <h3>💼 Experience</h3>
         <p><strong>Barem Ambalaj Internship</strong></p>
         <p>
-          Worked as a fullstack developer. Built an Order and Customer Tracking platform using React and C# Web API.
+          Worked as a fullstack developer. Built an Order and Customer Tracking platform using React, C# Web API and PostgreSQL.
         </p>
       </div>
     </div>
@@ -203,56 +285,90 @@
       <div class="card">
         <h3>Barem Order and Product Tracking Platform</h3>
         <p>A full-stack web application designed to track orders and customers data. Built with React and Bootstrap on the frontend and C# with PostgreSQL on the backend, optimizing database performance through indexing.</p>
-        <span>React • C# • PostgreSQL</span>
+        <div class="card-footer">
+          <span>React • C# • PostgreSQL</span>
+          <a href="https://github.com/damlala/customer-order-management-system" class="code-link" target="_blank">Github→</a>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Graduation Project: MarCode – Mobile Barcode Scanner App</h3>
+        <h3>Graduation Project: MarCode – Mobile Barcode Scanner App(Ongoing)</h3>
         <p>Currently developing a mobile application for real-time supermarket price comparison. As the core backend engineer in a team of four, I am responsible for architecting the NoSQL database schema (Firebase) and building secure RESTful APIs using Node.js to handle barcode querying, JWT-based user authentication, and Firebase Cloud Messaging integrations.</p>
-        <span>Node.js • Firebase • REST API</span>
+        <div class="card-footer">
+          <span>Node.js • Firebase • REST API</span>
+        </div>
       </div>
 
       <div class="card">
-        <h3>🎉 Birthday Surprise Website</h3>
-        <p>A personalized React-based web application with photos, videos, animations and a pop quiz created as a special digital gift for a close friend.</p>
-        <span>React • Bootstrap</span>
-      </div>
+    <h3>🎉 Birthday Surprise Website</h3>
+  <p>A personalized React-based web application with photos, videos, animations and a pop quiz created as a special digital gift for a close friend.</p>
+  <div class="card-footer">
+    <span>React • Bootstrap</span>
+    <span style="font-size: 0.85rem; font-weight: 600; color: #db2777; background: #fce7f3; border: none;">🔒 Private Project (Personal Gift)</span>
+  </div>
+</div>
 
       <div class="card">
         <h3>After - Breakup Healing App (Ongoing)</h3>
         <p>Collaborating on the development of a cross-platform mobile application focused on relationship coaching and post-breakup recovery. Responsible for architecting the backend using Node.js, managing Firebase database instances, and integrating Gemini AI for automated conversational support.</p>
-        <span>Node.js • Firebase • Gemini AI</span>
+        <div class="card-footer">
+          <span>Node.js • Firebase • Gemini AI</span>
+        </div>
       </div>
 
       <div class="card">
         <h3>Credit Card Validator</h3>
-        <p>A Java-based credit card validator using the Luhn algorithm.</p>
-        <span>Java</span>
+        <p>A Java-based credit card validator using the Luhn algorithm with real-time card brand detection and console interactivity.</p>
+        <div class="card-footer">
+          <span>Java</span>
+          <a href="https://github.com/damlala/credit-card-" class="code-link" target="_blank">View Source →</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Book Exchange Platform</h3>
         <p>A website for university students to buy, sell and exchange books.(group project)</p>
-        <span>Web Development</span>
+        <div class="card-footer">
+          <span>Web Development</span>
+          <a href="https://github.com/damlala/Book-Sale-Website" class="code-link" target="_blank">View Source →</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>MDQI Image Quality</h3>
         <p>A research-based image quality assessment system implemented in Python under faculty guidance. Features a custom image preprocessing pipeline and utilizes k-NN and Local Linear Embedding (LLE) for manifold-based reconstruction to estimate image distortion with optimized computational efficiency.</p>
-        <span>Research • Python</span>
+        <div class="card-footer">
+          <span>Research • Python</span>
+          <a href="https://github.com/damlala/mdqi-research-project" class="code-link" target="_blank">View Source →</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Sentiment Analysis</h3>
-        <p>A text classification tool developed in C# utilizing the Hugging Face API. It handles HTTP requests and processes real-time JSON data to categorize user sentiments into positive, neutral, or negative brackets.</p>
-        <span>C# .NET • NLP</span>
+        <p>A text classification tool developed in C# utilizing the Hugging Face API. It handles HTTP requests and processes real-time JSON data to categorize user sentiments into positive, neutral, or negative brackets using advanced asynchronous infrastructure.</p>
+        <div class="card-footer">
+          <span>C# .NET • NLP</span>
+          <a href="https://github.com/damlala/sentiment-analysis" class="code-link" target="_blank">View Source →</a>
+        </div>
       </div>
 
       <div class="card">
         <h3>Movie Archive System</h3>
         <p>A personalized desktop application designed to create, edit, watch and manage a custom movie collection. Built with a user-friendly frontend interface in C#, incorporating advanced file handling operations and internal data management functionalities to optimize user experience.</p>
-        <span>C# .NET</span>
+        <div class="card-footer">
+          <span>C# .NET</span>
+          <a href="https://github.com/damlala/My_Archives" class="code-link" target="_blank">View Source →</a>
+        </div>
       </div>
+
+      <div class="card">
+        <h3>Product Price Comparison – Backend Logic Prototype</h3>
+        <p>Developed an early-stage Python backend prototype designed to simulate localized product price matrices. Focused on relational data logic using built-in database tools to handle user authentication states and created a backend sorting mechanism to dynamically compute and identify the most cost-effective deals.</p>
+        <div class="card-footer">
+           <span>Python • SQL Logic • Backend Prototyping</span>
+           <a href="https://github.com/damlala/product-comparison" class="code-link" target="_blank">View Source →</a>
+  </div>
+</div>
 
     </div> 
   </div>
@@ -262,8 +378,10 @@
   <div class="container">
     <h1>Contact</h1>
     <div class="card">
-      <p><strong>Email:</strong> <a href="mailto:damla.ztkk@gmail.com" style="color:#2563eb; text-decoration:none;">damla.ztkk@gmail.com</a></p>
-      <p><strong>Phone:</strong> 0533 877 4733</p>
+      <p style="margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:damla.ztkk@gmail.com" style="color:#2563eb; text-decoration:none;">damla.ztkk@gmail.com</a></p>
+      <p style="margin-bottom: 10px;"><strong>Phone:</strong> 0533 877 4733</p>
+      <p style="margin-bottom: 10px;"><strong>GitHub:</strong> <a href="#" style="color:#2563eb; text-decoration:none;" target="_blank">github.com/yourusername</a></p>
+      <p><strong>LinkedIn:</strong> <a href="#" style="color:#2563eb; text-decoration:none;" target="_blank">linkedin.com/in/yourprofile</a></p>
     </div>
   </div>
 </section>
